@@ -7,30 +7,34 @@
 //
 
 #import "ViewController.h"
-@interface ViewController ()
+#import "LocationController.h"
+
+@interface ViewController () <LocationControllerDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
-- (IBAction)locationButtonSelected:(UIButton *	)sender;
-
+- (IBAction)locationButtonSelected:(UIButton *)sender;
 
 @end
 
 @implementation ViewController
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[self requestPermission];
 	[self.mapView.layer setCornerRadius:20.0];
 	[self.mapView setShowsUserLocation:YES];
 	
 }
 
-- (void) requestPermission {
-	
-	[self setLocationManager:[[CLLocationManager alloc]init]];
-	[self.locationManager requestWhenInUseAuthorization];
-	
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[[LocationController sharedController]setDelegate:self];
+	[[[LocationController sharedController]locationManager]startUpdatingLocation];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[self viewWillDisappear:animated];
+	[[[LocationController sharedController]locationManager]stopUpdatingLocation];
 }
 
 - (void)setRegionForCoordinate:(MKCoordinateRegion) region {
@@ -63,6 +67,12 @@
 		[self setRegionForCoordinate:region];
 	}
 	
+}
+
+#pragma mark - LocationController Delegate
+
+- (void) locationControllerDidUpdateLocation:(CLLocation *)location {
+	[self setRegionForCoordinate:MKCoordinateRegionMakeWithDistance(location.coordinate, 500.00, 500.00)];
 }
 
 

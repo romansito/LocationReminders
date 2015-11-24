@@ -16,6 +16,8 @@
 		309EF1921C03AE9000B6ADE7 /* ReminderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 309EF1911C03AE9000B6ADE7 /* ReminderTests.m */; };
 		309EF19D1C03AE9000B6ADE7 /* ReminderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 309EF19C1C03AE9000B6ADE7 /* ReminderUITests.m */; };
 		309EF1AB1C03AECC00B6ADE7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309EF1AA1C03AECC00B6ADE7 /* MapKit.framework */; };
+		309EF1B11C05062E00B6ADE7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 309EF1B01C05062E00B6ADE7 /* Constants.m */; };
+		309EF1B41C05086800B6ADE7 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309EF1B31C05086800B6ADE7 /* LocationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		309EF19C1C03AE9000B6ADE7 /* ReminderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReminderUITests.m; sourceTree = "<group>"; };
 		309EF19E1C03AE9000B6ADE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		309EF1AA1C03AECC00B6ADE7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		309EF1AF1C05062E00B6ADE7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		309EF1B01C05062E00B6ADE7 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		309EF1B21C05086800B6ADE7 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
+		309EF1B31C05086800B6ADE7 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +90,6 @@
 		309EF16B1C03AE8F00B6ADE7 = {
 			isa = PBXGroup;
 			children = (
-				309EF1AA1C03AECC00B6ADE7 /* MapKit.framework */,
 				309EF1761C03AE8F00B6ADE7 /* Reminder */,
 				309EF1901C03AE9000B6ADE7 /* ReminderTests */,
 				309EF19B1C03AE9000B6ADE7 /* ReminderUITests */,
@@ -105,14 +110,9 @@
 		309EF1761C03AE8F00B6ADE7 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				309EF17A1C03AE8F00B6ADE7 /* AppDelegate.h */,
-				309EF17B1C03AE8F00B6ADE7 /* AppDelegate.m */,
-				309EF17D1C03AE8F00B6ADE7 /* ViewController.h */,
-				309EF17E1C03AE8F00B6ADE7 /* ViewController.m */,
-				309EF1801C03AE8F00B6ADE7 /* Main.storyboard */,
-				309EF1831C03AE8F00B6ADE7 /* Assets.xcassets */,
-				309EF1851C03AE8F00B6ADE7 /* LaunchScreen.storyboard */,
-				309EF1881C03AE8F00B6ADE7 /* Info.plist */,
+				309EF1AC1C05052500B6ADE7 /* App */,
+				309EF1AD1C05053500B6ADE7 /* Controller */,
+				309EF1AE1C05054A00B6ADE7 /* View */,
 				309EF1771C03AE8F00B6ADE7 /* Supporting Files */,
 			);
 			path = Reminder;
@@ -121,6 +121,8 @@
 		309EF1771C03AE8F00B6ADE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				309EF1AA1C03AECC00B6ADE7 /* MapKit.framework */,
+				309EF1881C03AE8F00B6ADE7 /* Info.plist */,
 				309EF1781C03AE8F00B6ADE7 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -142,6 +144,38 @@
 				309EF19E1C03AE9000B6ADE7 /* Info.plist */,
 			);
 			path = ReminderUITests;
+			sourceTree = "<group>";
+		};
+		309EF1AC1C05052500B6ADE7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				309EF17A1C03AE8F00B6ADE7 /* AppDelegate.h */,
+				309EF17B1C03AE8F00B6ADE7 /* AppDelegate.m */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		309EF1AD1C05053500B6ADE7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				309EF1AF1C05062E00B6ADE7 /* Constants.h */,
+				309EF1B01C05062E00B6ADE7 /* Constants.m */,
+				309EF17D1C03AE8F00B6ADE7 /* ViewController.h */,
+				309EF17E1C03AE8F00B6ADE7 /* ViewController.m */,
+				309EF1B21C05086800B6ADE7 /* LocationController.h */,
+				309EF1B31C05086800B6ADE7 /* LocationController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		309EF1AE1C05054A00B6ADE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				309EF1801C03AE8F00B6ADE7 /* Main.storyboard */,
+				309EF1831C03AE8F00B6ADE7 /* Assets.xcassets */,
+				309EF1851C03AE8F00B6ADE7 /* LaunchScreen.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,9 +316,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				309EF1B41C05086800B6ADE7 /* LocationController.m in Sources */,
 				309EF17F1C03AE8F00B6ADE7 /* ViewController.m in Sources */,
 				309EF17C1C03AE8F00B6ADE7 /* AppDelegate.m in Sources */,
 				309EF1791C03AE8F00B6ADE7 /* main.m in Sources */,
+				309EF1B11C05062E00B6ADE7 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +546,7 @@
 				309EF1A31C03AE9000B6ADE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		309EF1A41C03AE9000B6ADE7 /* Build configuration list for PBXNativeTarget "ReminderTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +555,7 @@
 				309EF1A61C03AE9000B6ADE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		309EF1A71C03AE9000B6ADE7 /* Build configuration list for PBXNativeTarget "ReminderUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +564,7 @@
 				309EF1A91C03AE9000B6ADE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
