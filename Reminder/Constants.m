@@ -8,6 +8,6 @@
 
 #import "Constants.h"
 
-@implementation Constants
+NSString *const kParseApplicationId = @"tXokWgSbzYdrEa9UjnmeRMxosQiUTTN9SqbD75ne";
+NSString *const kParseClientKey = @"fEycyrNP5Hu13uhJEHuAdFzpzbnt3aErgqD29y9m";
 
-@end

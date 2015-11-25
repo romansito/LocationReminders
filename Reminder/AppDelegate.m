@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
+
+
 
 @interface AppDelegate ()
 
@@ -16,8 +19,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	// Override point for customization after application launch.
+	
+	[self setupParse];
+	[self registerForNotifications];
 	return YES;
+}
+
+- (void)setupParse {
+	
+	[Parse setApplicationId:@"tXokWgSbzYdrEa9UjnmeRMxosQiUTTN9SqbD75ne" clientKey:@"fEycyrNP5Hu13uhJEHuAdFzpzbnt3aErgqD29y9m"];
+	
+}
+
+- (void)registerForNotifications {
+	
+	[[UIApplication sharedApplication]registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+	
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

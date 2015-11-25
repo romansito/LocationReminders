@@ -133,7 +133,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" numberOfTapsRequired="1" id="DJW-fG-DIc">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="DJW-fG-DIc">
                     <connections>
                         <action selector="handleLongPressGesture:" destination="BYZ-38-t0r" id="9Lw-5G-LKd"/>
                         <outlet property="delegate" destination="DeL-z3-XpV" id="VAt-EE-QvC"/>
@@ -178,7 +178,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yq9-kH-pgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="387"/>
+            <point key="canvasLocation" x="469" y="382"/>
         </scene>
     </scenes>
 </document>

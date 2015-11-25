@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Constants : NSObject
+extern NSString *const kParseApplicationId;
+extern NSString *const kParseClientKey;
 
-@end

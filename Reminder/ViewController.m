@@ -10,12 +10,17 @@
 #import "LocationController.h"
 #import "DetailViewController.h"
 
-@interface ViewController () <LocationControllerDelegate, MKMapViewDelegate>
+@import Parse;
+@import ParseUI;
+
+
+
+@interface ViewController () <LocationControllerDelegate, MKMapViewDelegate, PFLogInViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
-- (IBAction)locationButtonSelected:(UIButton *)sender;
+//- (IBAction)locationButtonSelected:(UIButton *)sender;
 
 @end
 
@@ -24,15 +29,19 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[self.mapView.layer setCornerRadius:200.0];
+	[self.mapView.layer setCornerRadius:20.0];
 	[self.mapView setShowsUserLocation:YES];
-	
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	[[LocationController sharedController]setDelegate:self];
 	[[[LocationController sharedController]locationManager]startUpdatingLocation];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:YES];
+	[self logIn];
 }
 
 
@@ -53,35 +62,6 @@
 		
 		[self.mapView addAnnotation:newPoint];
 	}
-}
-
-
-- (IBAction)locationButtonSelected:(UIButton *)sender {
-	
-	NSString *buttonTitle = sender.titleLabel.text;
-	if ([buttonTitle isEqualToString:@"LocationOne"]){
-		NSLog(@"LocationOne");
-		
-		CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(40.7127837, -74.00594130000002);
-		MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 1000.00, 1000.00);
-		[self setRegionForCoordinate:region];
-	
-	}
-	if ([buttonTitle isEqualToString:@"LocationTwo"]){
-		NSLog(@"LocationTwo");
-		
-		CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.30732279999999, -122.22845319999999);
-		MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 1000.00, 1000.00);
-		[self setRegionForCoordinate:region];
-	}
-	if ([buttonTitle isEqualToString:@"LocationThree"]) {
-		NSLog(@"LocationThree");
-		
-		CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(51.5073509, -0.12775829999998223);
-		MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 1000.00, 1000.00);
-		[self setRegionForCoordinate:region];
-	}
-	
 }
 
 #pragma mark - LocationController Delegate
@@ -108,7 +88,6 @@
 	UIButton *rightCallOut = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 	annotationView.rightCalloutAccessoryView = rightCallOut;
 	
-	
 	return annotationView;
 	
 }
@@ -116,6 +95,36 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
 	[self performSegueWithIdentifier:@"DetailViewController" sender:view];
 }
+
+#pragma mark - Parse
+
+-(void)additionalUI {
+	UIBarButtonItem *signOutButton = [[UIBarButtonItem alloc]initWithTitle:@"sign out" style:UIBarButtonItemStylePlain target:self action:@selector(logOut)];
+	self.navigationItem.rightBarButtonItem = signOutButton;
+}
+
+- (void)logIn {
+	if (![PFUser currentUser]) {
+		PFLogInViewController *logInViewController = [[PFLogInViewController alloc]init];
+		logInViewController.delegate = self;
+		[self presentViewController:logInViewController animated:YES completion:nil];
+	} else {
+		[self additionalUI];
+	}
+}
+
+- (void)logOut {
+	
+	[PFUser logOut];
+	[self logIn];
+	
+}
+
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+	[self dismissViewControllerAnimated:YES completion:nil];
+	[self additionalUI];
+}
+
 
 
 @end
