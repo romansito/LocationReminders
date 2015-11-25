@@ -11,7 +11,8 @@
 
 @interface ViewController : UIViewController
 
-//
+@property(strong, nonatomic) UIColor *pinTintColor;
+
 
 @end
 

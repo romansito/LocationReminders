@@ -18,6 +18,7 @@
 		309EF1AB1C03AECC00B6ADE7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309EF1AA1C03AECC00B6ADE7 /* MapKit.framework */; };
 		309EF1B11C05062E00B6ADE7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 309EF1B01C05062E00B6ADE7 /* Constants.m */; };
 		309EF1B41C05086800B6ADE7 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309EF1B31C05086800B6ADE7 /* LocationController.m */; };
+		309EF1B71C053BE600B6ADE7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309EF1B61C053BE600B6ADE7 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		309EF1B01C05062E00B6ADE7 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		309EF1B21C05086800B6ADE7 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
 		309EF1B31C05086800B6ADE7 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
+		309EF1B51C053BE600B6ADE7 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		309EF1B61C053BE600B6ADE7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 				309EF17E1C03AE8F00B6ADE7 /* ViewController.m */,
 				309EF1B21C05086800B6ADE7 /* LocationController.h */,
 				309EF1B31C05086800B6ADE7 /* LocationController.m */,
+				309EF1B51C053BE600B6ADE7 /* DetailViewController.h */,
+				309EF1B61C053BE600B6ADE7 /* DetailViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				309EF17C1C03AE8F00B6ADE7 /* AppDelegate.m in Sources */,
 				309EF1791C03AE8F00B6ADE7 /* main.m in Sources */,
 				309EF1B11C05062E00B6ADE7 /* Constants.m in Sources */,
+				309EF1B71C053BE600B6ADE7 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

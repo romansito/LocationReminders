@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "LocationController.h"
+#import "DetailViewController.h"
 
 @interface ViewController () <LocationControllerDelegate, MKMapViewDelegate>
 
@@ -19,9 +20,11 @@
 @end
 
 @implementation ViewController
+
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[self.mapView.layer setCornerRadius:20.0];
+	[self.mapView.layer setCornerRadius:200.0];
 	[self.mapView setShowsUserLocation:YES];
 	
 }
@@ -32,14 +35,26 @@
 	[[[LocationController sharedController]locationManager]startUpdatingLocation];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-	[self viewWillDisappear:animated];
-	[[[LocationController sharedController]locationManager]stopUpdatingLocation];
-}
 
 - (void)setRegionForCoordinate:(MKCoordinateRegion) region {
 	[self.mapView setRegion:region animated:YES];
 }
+
+- (IBAction)handleLongPressGesture:(UILongPressGestureRecognizer *)gesture {
+	
+	if (gesture.state == UIGestureRecognizerStateBegan) {
+		CGPoint touchPoint = [gesture locationInView:self.mapView];
+		CLLocationCoordinate2D touchMapCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+		
+		MKPointAnnotation *newPoint = [[MKPointAnnotation alloc]init];
+		newPoint.coordinate = touchMapCoordinate;
+		newPoint.title = @"SUP";
+		newPoint.subtitle = @"I am a pretty pin!";
+		
+		[self.mapView addAnnotation:newPoint];
+	}
+}
+
 
 - (IBAction)locationButtonSelected:(UIButton *)sender {
 	
@@ -75,6 +90,32 @@
 	[self setRegionForCoordinate:MKCoordinateRegionMakeWithDistance(location.coordinate, 500.00, 500.00)];
 }
 
+#pragma mark - MapView Delegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+
+	if ([annotation isKindOfClass:[MKUserLocation class]]) {return nil; }
+	MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:@"AnnotationView"];
+	annotationView.annotation = annotation;
+	[annotationView setPinColor:MKPinAnnotationColorPurple];
+	
+	if (!annotationView) {
+		annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"AnnotationView"];
+		
+	}
+	
+	annotationView.canShowCallout = true;
+	UIButton *rightCallOut = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+	annotationView.rightCalloutAccessoryView = rightCallOut;
+	
+	
+	return annotationView;
+	
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+	[self performSegueWithIdentifier:@"DetailViewController" sender:view];
+}
 
 
 @end
