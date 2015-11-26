@@ -23,6 +23,7 @@
 		30246F061C066B9100573D5F /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30246F001C066B9100573D5F /* ParseFacebookUtilsV4.framework */; };
 		30246F071C066B9100573D5F /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30246F011C066B9100573D5F /* ParseTwitterUtils.framework */; };
 		30246F081C066B9100573D5F /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30246F021C066B9100573D5F /* ParseUI.framework */; };
+		30246F0D1C06939400573D5F /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 30246F0C1C06939400573D5F /* Reminder.m */; };
 		309EF1791C03AE8F00B6ADE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 309EF1781C03AE8F00B6ADE7 /* main.m */; };
 		309EF17C1C03AE8F00B6ADE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 309EF17B1C03AE8F00B6ADE7 /* AppDelegate.m */; };
 		309EF17F1C03AE8F00B6ADE7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309EF17E1C03AE8F00B6ADE7 /* ViewController.m */; };
@@ -71,6 +72,8 @@
 		30246F001C066B9100573D5F /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		30246F011C066B9100573D5F /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
 		30246F021C066B9100573D5F /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		30246F0B1C06939400573D5F /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
+		30246F0C1C06939400573D5F /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 		309EF1741C03AE8F00B6ADE7 /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309EF1781C03AE8F00B6ADE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		309EF17A1C03AE8F00B6ADE7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -170,10 +173,21 @@
 			name = Parse;
 			sourceTree = "<group>";
 		};
+		30246F0E1C0693A000573D5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30246F0B1C06939400573D5F /* Reminder.h */,
+				30246F0C1C06939400573D5F /* Reminder.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		309EF16B1C03AE8F00B6ADE7 = {
 			isa = PBXGroup;
 			children = (
 				309EF1761C03AE8F00B6ADE7 /* Reminder */,
+				30246F0E1C0693A000573D5F /* Model */,
+				309EF1771C03AE8F00B6ADE7 /* Supporting Files */,
 				30246EE31C06636500573D5F /* FrameWorks */,
 				309EF1901C03AE9000B6ADE7 /* ReminderTests */,
 				309EF19B1C03AE9000B6ADE7 /* ReminderUITests */,
@@ -197,7 +211,6 @@
 				309EF1AC1C05052500B6ADE7 /* App */,
 				309EF1AD1C05053500B6ADE7 /* Controller */,
 				309EF1AE1C05054A00B6ADE7 /* View */,
-				309EF1771C03AE8F00B6ADE7 /* Supporting Files */,
 			);
 			path = Reminder;
 			sourceTree = "<group>";
@@ -209,6 +222,7 @@
 				309EF1781C03AE8F00B6ADE7 /* main.m */,
 			);
 			name = "Supporting Files";
+			path = Reminder;
 			sourceTree = "<group>";
 		};
 		309EF1901C03AE9000B6ADE7 /* ReminderTests */ = {
@@ -407,6 +421,7 @@
 				309EF1791C03AE8F00B6ADE7 /* main.m in Sources */,
 				309EF1B11C05062E00B6ADE7 /* Constants.m in Sources */,
 				309EF1B71C053BE600B6ADE7 /* DetailViewController.m in Sources */,
+				30246F0D1C06939400573D5F /* Reminder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

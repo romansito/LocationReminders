@@ -18,32 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGl-VR-LIf">
-                                <rect key="frame" x="257" y="551" width="86" height="30"/>
-                                <animations/>
-                                <state key="normal" title="LocationTwo"/>
-                                <connections>
-                                    <action selector="locationButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FUx-XD-BWt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDA-ae-kD6">
-                                <rect key="frame" x="352" y="551" width="98" height="30"/>
-                                <animations/>
-                                <state key="normal" title="LocationThree"/>
-                                <connections>
-                                    <action selector="locationButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7YG-81-wXr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwD-an-tQO">
-                                <rect key="frame" x="161" y="551" width="87" height="30"/>
-                                <animations/>
-                                <state key="normal" title="LocationOne"/>
-                                <connections>
-                                    <action selector="locationButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MSJ-hY-TEZ"/>
-                                </connections>
-                            </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DeL-z3-XpV">
-                                <rect key="frame" x="50" y="100" width="500" height="400"/>
+                                <rect key="frame" x="25" y="80" width="550" height="500"/>
                                 <animations/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -58,40 +34,13 @@
                         <constraints>
                             <constraint firstItem="DeL-z3-XpV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4FF-N9-R9i"/>
                             <constraint firstItem="DeL-z3-XpV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5mE-cx-8ux"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IwD-an-tQO" secondAttribute="bottom" constant="20" id="6Of-0a-SuV"/>
-                            <constraint firstItem="wDA-ae-kD6" firstAttribute="leading" secondItem="uGl-VR-LIf" secondAttribute="trailing" constant="8" id="8Tk-Ii-lUj"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wDA-ae-kD6" secondAttribute="bottom" constant="19" id="CZn-zj-x9k"/>
-                            <constraint firstItem="wDA-ae-kD6" firstAttribute="leading" secondItem="uGl-VR-LIf" secondAttribute="trailing" constant="8" id="Em8-tr-Riq"/>
-                            <constraint firstItem="wDA-ae-kD6" firstAttribute="centerY" secondItem="uGl-VR-LIf" secondAttribute="centerY" id="F6W-bj-3gp"/>
-                            <constraint firstAttribute="trailing" secondItem="wDA-ae-kD6" secondAttribute="trailing" constant="149" id="FPr-qE-fiJ"/>
-                            <constraint firstItem="uGl-VR-LIf" firstAttribute="leading" secondItem="IwD-an-tQO" secondAttribute="trailing" constant="9" id="FSK-fd-2uf"/>
-                            <constraint firstItem="wDA-ae-kD6" firstAttribute="centerY" secondItem="uGl-VR-LIf" secondAttribute="centerY" constant="1" id="Fag-HP-bps"/>
-                            <constraint firstItem="wDA-ae-kD6" firstAttribute="centerY" secondItem="uGl-VR-LIf" secondAttribute="centerY" constant="1" id="Fd4-AG-i8q"/>
                             <constraint firstItem="DeL-z3-XpV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="180" id="GOh-w2-8YO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uGl-VR-LIf" secondAttribute="bottom" constant="20" id="GZB-R8-Ovl"/>
-                            <constraint firstItem="wDA-ae-kD6" firstAttribute="centerY" secondItem="uGl-VR-LIf" secondAttribute="centerY" id="I2e-g4-TJU"/>
-                            <constraint firstItem="uGl-VR-LIf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="265" id="I6V-lx-QSu"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IwD-an-tQO" secondAttribute="bottom" constant="19" id="JBY-UW-sQD"/>
-                            <constraint firstItem="IwD-an-tQO" firstAttribute="centerY" secondItem="uGl-VR-LIf" secondAttribute="centerY" id="KP0-QF-gwI"/>
-                            <constraint firstItem="IwD-an-tQO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="159" id="L6k-Fg-sKE"/>
-                            <constraint firstItem="IwD-an-tQO" firstAttribute="centerY" secondItem="uGl-VR-LIf" secondAttribute="centerY" id="Lt4-IG-wJI"/>
                             <constraint firstItem="DeL-z3-XpV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MgX-Gr-z5i"/>
-                            <constraint firstItem="uGl-VR-LIf" firstAttribute="leading" secondItem="IwD-an-tQO" secondAttribute="trailing" constant="8" id="PUh-00-Afh"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uGl-VR-LIf" secondAttribute="bottom" constant="19" id="Q1d-V5-WvF"/>
-                            <constraint firstItem="IwD-an-tQO" firstAttribute="centerY" secondItem="uGl-VR-LIf" secondAttribute="centerY" id="TKo-jN-Lif"/>
-                            <constraint firstItem="uGl-VR-LIf" firstAttribute="leading" secondItem="IwD-an-tQO" secondAttribute="trailing" constant="8" id="ViL-nh-XzV"/>
-                            <constraint firstItem="wDA-ae-kD6" firstAttribute="leading" secondItem="uGl-VR-LIf" secondAttribute="trailing" constant="9" id="W1l-61-J5K"/>
-                            <constraint firstItem="wDA-ae-kD6" firstAttribute="leading" secondItem="uGl-VR-LIf" secondAttribute="trailing" constant="8" id="boy-gC-kxu"/>
-                            <constraint firstItem="DeL-z3-XpV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="dUQ-S1-FPn"/>
-                            <constraint firstItem="uGl-VR-LIf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e3u-gI-zW0"/>
-                            <constraint firstItem="DeL-z3-XpV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eCd-YH-vAw"/>
+                            <constraint firstItem="DeL-z3-XpV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="dUQ-S1-FPn"/>
+                            <constraint firstItem="DeL-z3-XpV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="30" id="eCd-YH-vAw"/>
                             <constraint firstItem="DeL-z3-XpV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="216" id="eUJ-RT-Jxs"/>
                             <constraint firstAttribute="bottom" secondItem="DeL-z3-XpV" secondAttribute="bottom" constant="86" id="h9W-HT-yhk"/>
-                            <constraint firstItem="DeL-z3-XpV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="npV-9Q-qAH"/>
-                            <constraint firstItem="wDA-ae-kD6" firstAttribute="centerY" secondItem="uGl-VR-LIf" secondAttribute="centerY" id="wsO-q9-lXj"/>
-                            <constraint firstItem="uGl-VR-LIf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xbe-bS-b0Q"/>
-                            <constraint firstItem="IwD-an-tQO" firstAttribute="centerY" secondItem="uGl-VR-LIf" secondAttribute="centerY" id="xxR-YT-OFq"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wDA-ae-kD6" secondAttribute="bottom" constant="19" id="yhC-oC-gGn"/>
+                            <constraint firstItem="DeL-z3-XpV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="kRn-s2-5DG"/>
                             <constraint firstAttribute="trailing" secondItem="DeL-z3-XpV" secondAttribute="trailing" constant="30" id="ztO-MR-7oH"/>
                         </constraints>
                         <variation key="default">
@@ -102,27 +51,6 @@
                                 <exclude reference="eUJ-RT-Jxs"/>
                                 <exclude reference="h9W-HT-yhk"/>
                                 <exclude reference="ztO-MR-7oH"/>
-                                <exclude reference="KP0-QF-gwI"/>
-                                <exclude reference="L6k-Fg-sKE"/>
-                                <exclude reference="Lt4-IG-wJI"/>
-                                <exclude reference="xxR-YT-OFq"/>
-                                <exclude reference="6Of-0a-SuV"/>
-                                <exclude reference="CZn-zj-x9k"/>
-                                <exclude reference="GZB-R8-Ovl"/>
-                                <exclude reference="JBY-UW-sQD"/>
-                                <exclude reference="yhC-oC-gGn"/>
-                                <exclude reference="I6V-lx-QSu"/>
-                                <exclude reference="PUh-00-Afh"/>
-                                <exclude reference="ViL-nh-XzV"/>
-                                <exclude reference="e3u-gI-zW0"/>
-                                <exclude reference="8Tk-Ii-lUj"/>
-                                <exclude reference="Em8-tr-Riq"/>
-                                <exclude reference="F6W-bj-3gp"/>
-                                <exclude reference="FPr-qE-fiJ"/>
-                                <exclude reference="Fag-HP-bps"/>
-                                <exclude reference="Fd4-AG-i8q"/>
-                                <exclude reference="boy-gC-kxu"/>
-                                <exclude reference="wsO-q9-lXj"/>
                             </mask>
                         </variation>
                     </view>
@@ -153,9 +81,45 @@
                     <view key="view" contentMode="scaleToFill" id="AF3-Id-5rE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="what's your reminder?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cOq-AV-qUG">
+                                <rect key="frame" x="20" y="209" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="what's the radius?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXU-rZ-pND">
+                                <rect key="frame" x="20" y="247" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugX-Qp-MW7">
+                                <rect key="frame" x="243" y="301" width="115" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Create Reminder"/>
+                                <connections>
+                                    <action selector="createReminderButtonSelected:" destination="aZU-cw-ohH" eventType="touchUpInside" id="vWd-V9-6xn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ugX-Qp-MW7" firstAttribute="centerX" secondItem="AF3-Id-5rE" secondAttribute="centerX" id="0E5-gy-usq"/>
+                            <constraint firstItem="WXU-rZ-pND" firstAttribute="top" secondItem="cOq-AV-qUG" secondAttribute="bottom" constant="8" id="CZ1-ba-ziW"/>
+                            <constraint firstItem="cOq-AV-qUG" firstAttribute="leading" secondItem="AF3-Id-5rE" secondAttribute="leading" constant="20" id="CeG-EF-v42"/>
+                            <constraint firstItem="WXU-rZ-pND" firstAttribute="leading" secondItem="AF3-Id-5rE" secondAttribute="leading" constant="20" id="UJm-Yd-sPn"/>
+                            <constraint firstItem="ugX-Qp-MW7" firstAttribute="top" secondItem="WXU-rZ-pND" secondAttribute="bottom" constant="24" id="ZP0-fd-fgu"/>
+                            <constraint firstAttribute="trailing" secondItem="cOq-AV-qUG" secondAttribute="trailing" constant="20" id="hh5-ui-RBR"/>
+                            <constraint firstAttribute="trailing" secondItem="WXU-rZ-pND" secondAttribute="trailing" constant="20" id="lLv-Nn-Im4"/>
+                            <constraint firstItem="cOq-AV-qUG" firstAttribute="top" secondItem="jb9-Fd-Lsy" secondAttribute="bottom" constant="145" id="xTl-Fy-cEM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="radiusTextField" destination="WXU-rZ-pND" id="bgV-j1-MMW"/>
+                        <outlet property="reminderTextField" destination="cOq-AV-qUG" id="H11-C1-dmO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WUq-vw-RAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
