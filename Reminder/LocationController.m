@@ -30,7 +30,7 @@
 			_locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 			_locationManager.distanceFilter = 100;
 			
-			[_locationManager requestWhenInUseAuthorization];
+			[_locationManager requestAlwaysAuthorization];
 		}
 		return self;
 	}
