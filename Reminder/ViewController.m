@@ -12,8 +12,8 @@
 
 @import Parse;
 @import ParseUI;
-
-
+@import MapKit;
+@import CoreLocation;
 
 @interface ViewController () <LocationControllerDelegate, MKMapViewDelegate, PFLogInViewControllerDelegate>
 
@@ -37,6 +37,7 @@
 	[super viewWillAppear:animated];
 	[[LocationController sharedController]setDelegate:self];
 	[[[LocationController sharedController]locationManager]startUpdatingLocation];
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -48,6 +49,20 @@
 - (void)setRegionForCoordinate:(MKCoordinateRegion) region {
 	[self.mapView setRegion:region animated:YES];
 }
+
+-(void)loadFromParse {
+	PFQuery *query = [PFQuery queryWithClassName:@"Reminder"];
+		[query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+		
+		if (!error) {
+			NSLog(@"Successfully retrieved %lu reminders.", objects.count);
+		} else {
+			NSLog(@"Error: %@ %@", error, [error userInfo]);
+		}
+	}];
+}
+
+
 
 - (IBAction)handleLongPressGesture:(UILongPressGestureRecognizer *)gesture {
 	
@@ -83,6 +98,15 @@
 	}
 }
 
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+	if (region) {
+		UILocalNotification *notification = [[UILocalNotification alloc] init];
+		notification.alertTitle = @"You have arrived";
+		notification.alertBody = region.identifier;
+		[[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+	}
+}
+
 #pragma mark - LocationController Delegate
 
 - (void) locationControllerDidUpdateLocation:(CLLocation *)location {
@@ -100,7 +124,6 @@
 	
 	if (!annotationView) {
 		annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"AnnotationView"];
-		
 	}
 	
 	annotationView.canShowCallout = true;

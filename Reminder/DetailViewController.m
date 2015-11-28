@@ -40,6 +40,10 @@
 
 - (IBAction)createReminderButtonSelected:(UIButton *)sender {
 	
+	UILocalNotification *notification = [[UILocalNotification alloc]init];
+	notification.alertTitle = self.reminderTextField.text;
+
+	
 	Reminder *reminder = [[Reminder alloc]init];
 	reminder.reminder = self.reminderTextField.text;
 	reminder.radius = [NSNumber numberWithFloat:self.radiusTextField.text.floatValue];
@@ -69,7 +73,29 @@
 	}];
 }
 
+
+
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
