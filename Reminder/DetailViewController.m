@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "Reminder.h"
 #import "LocationController.h"
+@import MapKit;
 
 @interface DetailViewController ()
 

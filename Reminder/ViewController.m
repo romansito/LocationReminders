@@ -31,6 +31,18 @@
 	[super viewDidLoad];
 	[self.mapView.layer setCornerRadius:20.0];
 	[self.mapView setShowsUserLocation:YES];
+	
+	PFQuery *query = [PFQuery queryWithClassName:@"Reminder"];
+	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		
+		if (!error) {
+			NSLog(@"Success %lx!.", objects.count);
+		} else {
+			NSLog(@"Error: %@ %@", error, [error userInfo]);
+		}
+	}];
+
+	
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,20 +61,6 @@
 - (void)setRegionForCoordinate:(MKCoordinateRegion) region {
 	[self.mapView setRegion:region animated:YES];
 }
-
--(void)loadFromParse {
-	PFQuery *query = [PFQuery queryWithClassName:@"Reminder"];
-		[query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-		
-		if (!error) {
-			NSLog(@"Successfully retrieved %lu reminders.", objects.count);
-		} else {
-			NSLog(@"Error: %@ %@", error, [error userInfo]);
-		}
-	}];
-}
-
-
 
 - (IBAction)handleLongPressGesture:(UILongPressGestureRecognizer *)gesture {
 	

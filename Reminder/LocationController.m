@@ -28,7 +28,7 @@
 			_locationManager = [[CLLocationManager alloc]init];
 			_locationManager.delegate = self;
 			_locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-			_locationManager.distanceFilter = 100;
+			_locationManager.distanceFilter = 50;
 			
 			[_locationManager requestAlwaysAuthorization];
 		}
@@ -41,6 +41,24 @@
 	[self.delegate locationControllerDidUpdateLocation:locations.lastObject];
 	[self setLocation:locations.lastObject];
 }
+
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+	UILocalNotification *notification = [[UILocalNotification alloc]init];
+	notification.alertTitle = @"Reminder";
+	[[UIApplication sharedApplication]presentLocalNotificationNow:notification];
+}
+
+//- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+//	
+//	NSLog(@"User did enter region.");
+//	
+//	UILocalNotification *notification = [[UILocalNotification alloc]init];
+//	notification.alertTitle = @"Reminder";
+//	notification.alertBody = @"Buy Eggs.";
+//	
+//	[[UIApplication sharedApplication]presentLocalNotificationNow:notification];
+//}
+
 
 
 
