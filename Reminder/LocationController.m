@@ -45,19 +45,10 @@
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
 	UILocalNotification *notification = [[UILocalNotification alloc]init];
 	notification.alertTitle = @"Reminder";
+	notification.alertBody = @"The alert worked!?";
 	[[UIApplication sharedApplication]presentLocalNotificationNow:notification];
 }
 
-//- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
-//	
-//	NSLog(@"User did enter region.");
-//	
-//	UILocalNotification *notification = [[UILocalNotification alloc]init];
-//	notification.alertTitle = @"Reminder";
-//	notification.alertBody = @"Buy Eggs.";
-//	
-//	[[UIApplication sharedApplication]presentLocalNotificationNow:notification];
-//}
 
 
 
