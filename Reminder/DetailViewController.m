@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "Reminder.h"
 #import "LocationController.h"
+@import MapKit;
 
 @interface DetailViewController ()
 
@@ -40,6 +41,10 @@
 
 - (IBAction)createReminderButtonSelected:(UIButton *)sender {
 	
+	UILocalNotification *notification = [[UILocalNotification alloc]init];
+	notification.alertTitle = self.reminderTextField.text;
+
+	
 	Reminder *reminder = [[Reminder alloc]init];
 	reminder.reminder = self.reminderTextField.text;
 	reminder.radius = [NSNumber numberWithFloat:self.radiusTextField.text.floatValue];
@@ -69,7 +74,29 @@
 	}];
 }
 
+
+
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

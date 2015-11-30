@@ -12,8 +12,8 @@
 
 @import Parse;
 @import ParseUI;
-
-
+@import MapKit;
+@import CoreLocation;
 
 @interface ViewController () <LocationControllerDelegate, MKMapViewDelegate, PFLogInViewControllerDelegate>
 
@@ -31,12 +31,25 @@
 	[super viewDidLoad];
 	[self.mapView.layer setCornerRadius:20.0];
 	[self.mapView setShowsUserLocation:YES];
+	
+	PFQuery *query = [PFQuery queryWithClassName:@"Reminder"];
+	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		
+		if (!error) {
+			NSLog(@"Success %lx!.", objects.count);
+		} else {
+			NSLog(@"Error: %@ %@", error, [error userInfo]);
+		}
+	}];
+
+	
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	[[LocationController sharedController]setDelegate:self];
 	[[[LocationController sharedController]locationManager]startUpdatingLocation];
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -83,6 +96,15 @@
 	}
 }
 
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+	if (region) {
+		UILocalNotification *notification = [[UILocalNotification alloc] init];
+		notification.alertTitle = @"You have arrived";
+		notification.alertBody = region.identifier;
+		[[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+	}
+}
+
 #pragma mark - LocationController Delegate
 
 - (void) locationControllerDidUpdateLocation:(CLLocation *)location {
@@ -100,7 +122,6 @@
 	
 	if (!annotationView) {
 		annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"AnnotationView"];
-		
 	}
 	
 	annotationView.canShowCallout = true;
